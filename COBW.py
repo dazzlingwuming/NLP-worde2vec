@@ -13,9 +13,7 @@ class COBW(nn.Module):
     def forward(self, x):
         x = self.embedding(x)
         x= x.mean(dim=1)
-        x = torch.relu(x)
         x = self.out(x)
-        x = torch.sigmoid(x)
         return x
 
 if __name__ == "__main__":
